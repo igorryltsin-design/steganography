@@ -1,0 +1,80 @@
+{
+  "schema": {
+    "name": "stegano_report",
+    "version": "1.1.0"
+  },
+  "meta": {
+    "report_id": "uuid-v4",
+    "generated_at_utc": "2026-02-27T20:00:00+00:00",
+    "app_name": "Стего Студия",
+    "app_version": "0.3.0"
+  },
+  "input": {
+    "source_image_path": "/absolute/path/to/source.png",
+    "image": {
+      "width": 1920,
+      "height": 1080,
+      "mode": "RGB"
+    }
+  },
+  "embedding": {
+    "method": "sequential",
+    "bits_per_channel": 2,
+    "password_used": true,
+    "message": {
+      "chars": 420,
+      "bytes_utf8": 590
+    },
+    "capacity": {
+      "bytes": 1555196,
+      "kb": 1518.746,
+      "usage_ratio": 0.000379
+    }
+  },
+  "quality_metrics": {
+    "psnr_db": 52.691431,
+    "mse": 0.35069444,
+    "ssim": 0.99880441,
+    "error": null
+  },
+  "steganalysis": {
+    "chi_square": {
+      "original": {
+        "chi2": 76.81356918,
+        "zero_bits": 3115520,
+        "one_bits": 3105280,
+        "suspicious": true
+      },
+      "stego": {
+        "chi2": 0.84234322,
+        "zero_bits": 3110426,
+        "one_bits": 3110374,
+        "suspicious": false
+      }
+    }
+  },
+  "risk": {
+    "level": "LOW",
+    "reason": "низкая загрузка и минимальные изменения LSB-статистики"
+  },
+  "demo_summary": {
+    "steps": ["open", "encode", "compare", "attacks", "benchmark"],
+    "completed": true
+  },
+  "robustness_score": 80.0,
+  "visual_artifacts": {
+    "before": "proof_pack/before.png",
+    "after": "proof_pack/after.png",
+    "heatmap": "proof_pack/heatmap.png",
+    "hotspot": "proof_pack/hotspot.png",
+    "inspector": "proof_pack/inspector.png",
+    "attacks_csv": "proof_pack/attacks.csv"
+  },
+  "recommendation": "Для качества изображения лучше Последовательный / 1 бит: SSIM=1.0000, PSNR=86.08.",
+  "artifacts": {
+    "encoded_image_path": "/absolute/path/to/encoded.png",
+    "report_path": "/absolute/path/to/report.json",
+    "report_format": "json",
+    "proof_pack_path": "/absolute/path/to/proof_pack.zip"
+  }
+}

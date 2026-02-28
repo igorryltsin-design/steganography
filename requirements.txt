@@ -1,0 +1,9 @@
+pillow
+numpy
+scikit-image
+matplotlib
+PySide6
+pyqtgraph
+opencv-python>=4.10
+pytest
+pytest-qt
